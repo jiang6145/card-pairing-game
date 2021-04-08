@@ -1,0 +1,114 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  background-color: coral;
+  font-family: 'Patrick Hand', cursive;
+  color: cornsilk;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  -webkit-user-select: none;
+}
+.title {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  letter-spacing: 5px;
+  text-align: center;
+  font-size: 50px;
+}
+
+.btns-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.btn-start {
+  margin-bottom: 30px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  background-color: rgb(0, 60, 255);
+  box-shadow: 0 8px 1px rgb(0, 37, 160);
+  padding: 5px 30px;
+  letter-spacing: 3px;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 30px;
+  font-weight: 900;
+  color: #fff;
+}
+.btns-wrap > .text,
+.round-text {
+  letter-spacing: 3px;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+#game {
+  display: none;
+  max-width: 1100px;
+  perspective: 1200px;
+  perspective-origin: center center;
+  font-size: 0;
+  text-align: center;
+}
+.card-wrap {
+  display: inline-block;
+  width: 140px;
+  height: 140px;
+  margin: 5px;
+  position: relative;
+  cursor: pointer;
+}
+.card {
+  transform-style: preserve-3d;
+  transform: rotateY(180deg);
+  transition: 0.8s;
+}
+.card-wrap.open > .card {
+  transform: rotateY(0deg);
+}
+.card,
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.front,
+.back {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  backface-visibility: hidden;
+  border: 3px solid #ccc;
+  border-radius: 10px;
+}
+.front {
+  background-color: #fff;
+}
+.back {
+  background-color: cornsilk;
+  transform: rotateY(180deg);
+}
+.front > .text {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  text-transform: capitalize;
+  word-break: break-all;
+  letter-spacing: 2px;
+  font-size: 36px;
+  font-weight: 900;
+  color: rgb(138, 138, 138);
+}
+.front > .text::first-letter {
+  color: coral;
+}
